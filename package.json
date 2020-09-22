@@ -18,6 +18,10 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "serve": "npx nodemon index.js",
+     "build:ui": "rimraf build && parcel build src/index.html -d build",
+     "deploy": "git push origin-heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",    
+    "logs:prod": "heroku logs --tail",
     "format": "prettier \"frontend-src/**/*.{js,css,html}\" --write",
     "lint": "eslint \"frontend-src/**/*.{js,jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,1 +1,1 @@
-web: cd fullstackopen && npm run serve
+web: npm run serve

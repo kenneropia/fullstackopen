@@ -49,7 +49,7 @@ const App = () => {
       })
       .catch((error) => {
         setErrorMessage(
-          `Note '${note.content}'  is being updated`
+          `Note '${note.content}' was already removed from server`
         )
       })
   }

@@ -51,6 +51,21 @@ app.get('/api/notes', (req, res) => {
   console.log(notes)
 })
 
+app.put('/api/notes/:id', (req, res) => {
+  const body = req.body
+  const id = +req.params.id
+  const verifiedNote = notes.findIndex(
+    (element) => {
+     return element.id == id
+    }
+  )
+
+  if (verifiedNote !== -1) {
+    notes[verifiedNote] = body
+    res.json(body)
+  }
+})
+
 app.post('/api/notes', (req, res) => {
   const body = req.body
 
